@@ -1,0 +1,164 @@
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Container for the application */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Form styling */
+form {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Filter input */
+#filter {
+    margin-bottom: 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
+/* Expense list styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li.expense-item {
+    background-color: #e9ecef;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+li.expense-item div {
+    flex: 1;
+    text-align: center;
+    color: #555;
+}
+
+li.expense-item div:nth-child(2) {
+    font-weight: bold;
+    color: #000;
+}
+
+li.expense-item div:nth-child(3) {
+    color: #007bff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes thankYouFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Thank You animation */
+#thank-you {
+    display: none;
+    color: #007bff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: thankYouFadeIn 0.7s ease-in-out forwards;
+}
+
+/* Export button */
+button[onclick="exportToCSV()"] {
+    background-color: #007bff;
+    margin-top: 20px;
+}
+
+button[onclick="exportToCSV()"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    li.expense-item div {
+        font-size: 14px;
+    }
+
+    input, select, button {
+        font-size: 14px;
+    }
+}
